@@ -44,7 +44,6 @@ export type NewsletterMetadata = {
     subscribers: number
     /**verification state of newsletter */
     verification: NewsletterVerification
-    verification_source: string | null
     /**viewer metadata */
     viewer_metadata: NewsletterViewerMetadata
 }
