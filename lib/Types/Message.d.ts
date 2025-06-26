@@ -65,6 +65,21 @@ export type MediaConnInfo = {
     fetchDate: Date
 }
 
+export type Sticker { 
+    data: WAMediaUpload
+    emojis?: string[]
+    accessibilityLabel?: string
+}
+
+export type StickerPack 
+    stickers: Sticker[]
+    cover: WAMediaUpload
+    name: string
+    publisher: string
+    description?: string
+    packId?: string
+}
+
 export interface Carousel {
     image?: WAMediaUpload
     video?: WAMediaUpload
@@ -328,6 +343,8 @@ export type AnyRegularMessageContent = (({
     businessOwnerJid?: string
     body?: string
     footer?: string
+} | {
+    stickerPack: StickerPack
 } | SharePhoneNumber | RequestPhoneNumber) & ViewOnce & ViewOnceV2 & ViewOnceV2Ext
 
 export type AnyMessageContent = AnyRegularMessageContent | {

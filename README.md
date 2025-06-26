@@ -124,6 +124,7 @@ import makeWASocket from '@itsukichan/baileys'
         - [Payment Invite Message](#payment-invite-message) 
         - [Admin Invite Message](#invite-admin-message) 
         - [Group Invite Message](#group-invite-message)
+        - [Sticker Pack Message](#sticker-pack-message) 
         - [Share Phone Number Message](#share-phone-number-message) 
         - [Request Phone Number Message](#request-phone-number-message) 
         - [Buttons Reply Message](#buttons-reply-message) 
@@ -878,6 +879,32 @@ await suki.sendMessage(
 )
 ```
 
+### Sticker Pack Message
+```ts 
+// I don't know why the sticker doesn't appear
+await suki.sendMessage(
+    jid,
+    {
+        stickerPack: {
+            name: 'Hiii', 
+            publisher: 'By Itsukichann', 
+            description: 'Hello', 
+            cover: Buffer, // Image buffer
+            stickers: [{
+                data: { url: 'https://example.com/1234kjd.webp' }, 
+                emojis: ['❤'], // optional
+                accessibilityLabel: '' // optional
+            }, 
+            {
+                data: Buffer, 
+                emojis: ['❤'], // optional
+                accessibilityLabel: '' // optional
+            }]
+        }
+    }
+)
+```
+
 ### Share Phone Number Message
 ```ts
 await suki.sendMessage(
@@ -1509,53 +1536,14 @@ await suki.sendMessage(
 
 ### Status Mentions Message
 ```ts
-
-const jids = [
-  "120XXXXXXXXXXXXX0@g.us",
-  "120XXXXXXXXXXXXX1@g.us",
-  "120XXXXXXXXXXXXX3@g.us",
-  "55XXXXXXXXX0@s.whatsapp.net",
-  "55XXXXXXXXX1@s.whatsapp.net"
-]
-
-// Text
 await suki.sendStatusMentions(
+   jid, 
     {
-      text: "Hello, everyone! :3",
-      font: 2, // OPTIONAL
-      textColor: "#FF0000", // OPTIONAL
-      backgroundColor: "#000000" // OPTIONAL
-    },
-    jids // Limited to 5 mentions per status.
-)
-
-// Image
-await suki.sendStatusMentions(
-    {
-      image: { url: 'https://example.com/image.jpg' }, // or buffer
-      caption: "Hello, everyone! :3", // OPTIONAL
-    },
-    jids // Limited to 5 mentions per status.
-)
-
-// Video
-await suki.sendStatusMentions(
-    {
-      video: { url: 'https://example.com/video.mp4' }, // or buffer
-      caption: "Hello, everyone! :3", // OPTIONAL
-    },
-    jids // Limited to 5 mentions per status.
-)
-
-// Audio
-await suki.sendStatusMentions(
-    {
-      audio: { url: 'https://example.com/audio.mp3' }, // or buffer
-      backgroundColor: "#000000", // OPTIONAL
-      mimetype: 'audio/mp4',
-      ppt: true
-    },
-    jids // Limited to 5 mentions per status.
+      image: {
+       url: 'https://example.com.jpg'
+       }, 
+       caption: 'Hi'
+    }
 )
 ```
 
