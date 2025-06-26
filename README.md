@@ -1526,7 +1526,7 @@ await suki.sendStatusMentions(
       textColor: "#FF0000", // OPTIONAL
       backgroundColor: "#000000" // OPTIONAL
     },
-    jids
+    jids // Limited to 5 mentions per status.
 )
 
 // Image
@@ -1535,7 +1535,7 @@ await suki.sendStatusMentions(
       image: { url: 'https://example.com/image.jpg' }, // or buffer
       caption: "Hello, everyone! :3", // OPTIONAL
     },
-    jids
+    jids // Limited to 5 mentions per status.
 )
 
 // Video
@@ -1544,17 +1544,18 @@ await suki.sendStatusMentions(
       video: { url: 'https://example.com/video.mp4' }, // or buffer
       caption: "Hello, everyone! :3", // OPTIONAL
     },
-    jids
+    jids // Limited to 5 mentions per status.
 )
 
 // Audio
 await suki.sendStatusMentions(
     {
       audio: { url: 'https://example.com/audio.mp3' }, // or buffer
-      backgroundColor: "#000000",
+      backgroundColor: "#000000", // OPTIONAL
+      mimetype: 'audio/mp4',
       ppt: true
     },
-    jids
+    jids // Limited to 5 mentions per status.
 )
 ```
 
