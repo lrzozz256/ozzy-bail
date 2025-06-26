@@ -71,7 +71,7 @@ export type Sticker {
     accessibilityLabel?: string
 }
 
-export type StickerPack 
+export type StickerPack {
     stickers: Sticker[]
     cover: WAMediaUpload
     name: string
