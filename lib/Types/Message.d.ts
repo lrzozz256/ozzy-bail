@@ -65,13 +65,7 @@ export type MediaConnInfo = {
     fetchDate: Date
 }
 
-export type Sticker { 
-    data: WAMediaUpload
-    emojis?: string[]
-    accessibilityLabel?: string
-}
-
-export type StickerPack {
+export interface type StickerPack {
     stickers: Sticker[]
     cover: WAMediaUpload
     name: string
@@ -124,6 +118,12 @@ type ViewOnceV2 = {
 
 type ViewOnceV2Ext = {
     viewOnceV2Ext?: boolean
+}
+
+type Sticker = { 
+    data: WAMediaUpload
+    emojis?: string[]
+    accessibilityLabel?: string
 }
 
 type Buttonable = {
