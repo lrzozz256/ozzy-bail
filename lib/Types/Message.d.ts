@@ -65,7 +65,7 @@ export type MediaConnInfo = {
     fetchDate: Date
 }
 
-export interface type StickerPack {
+export interface StickerPack {
     stickers: Sticker[]
     cover: WAMediaUpload
     name: string
@@ -288,9 +288,9 @@ export type PaymentInfo = {
     expiry?: number
     from?: string
     image?: {
-        placeholderArgb: fixed32
-        textArgb: fixed32
-        subtextArgb: fixed32
+        placeholderArgb: number
+        textArgb: number
+        subtextArgb: number
     }
 }
 
