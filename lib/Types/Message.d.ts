@@ -120,12 +120,6 @@ type ViewOnceV2Ext = {
     viewOnceV2Ext?: boolean
 }
 
-type Sticker = { 
-    data: WAMediaUpload
-    emojis?: string[]
-    accessibilityLabel?: string
-}
-
 type Buttonable = {
     /** add buttons to the message  */
     buttons?: proto.Message.ButtonsMessage.IButton[]
@@ -187,6 +181,12 @@ type Editable = {
 type WithDimensions = {
     width?: number
     height?: number
+}
+
+export type Sticker = { 
+    data: WAMediaUpload
+    emojis?: string[]
+    accessibilityLabel?: string
 }
 
 export type PollMessageOptions = {
